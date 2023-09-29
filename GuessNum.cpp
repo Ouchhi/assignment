@@ -637,13 +637,14 @@ void easyMode(){
         		break;
         	case 2:
         		gotoxy(70, 15);
-        		Loading();
-        		gotoxy(70, 16);
+        		
         		cout << "[+]Enter coins to bet: ";
         		cin >> money;
+        		gotoxy(70, 16);
+				Loading();
         		break;
         	case 3:
-        		return;
+        		level();
         		break;
     }
         
@@ -658,7 +659,7 @@ void easyMode(){
     system("cls");
     gotoxy(72, 4);
     int num;
-    cout << "[+]Guess number(1-20): ";
+    cout << "[+]Guess number(1-30): ";
     cin >> num;
     gotoxy(72, 6);
 	Loading();
@@ -675,7 +676,10 @@ void easyMode(){
         gotoxy(76, 16);
     	sleep(5);
 	    system("cls");
-    } else if (num > 6 || num < 1) {
+    } else if (num > 30 || num < 1) {
+    	drawBorder(64, 8, 40, 6);
+    	gotoxy(69, 11);
+    	setColor(12,0);
         cout << "[+]Please enter a valid number!" << endl;
         sleep(5);
 	    system("cls");
@@ -740,13 +744,14 @@ void normalMode(){
         		break;
         	case 2:
         		gotoxy(70, 15);
-        		Loading();
-        		gotoxy(70, 16);
+        		
         		cout << "[+]Enter coins to bet: ";
         		cin >> money;
+        		gotoxy(70, 16);
+        		Loading();
         		break;
         	case 3:
-        		return;
+        		level();
         		break;
     }
         
@@ -778,7 +783,10 @@ void normalMode(){
         gotoxy(76, 16);
     	sleep(5);
 	    system("cls");
-    } else if (num > 6 || num < 1) {
+    } else if (num > 20 || num < 1) {
+    	drawBorder(64, 8, 40, 6);
+    	gotoxy(69, 11);
+    	setColor(12,0);
         cout << "[+]Please enter a valid number!" << endl;
         sleep(5);
 	    system("cls");
@@ -842,13 +850,14 @@ void hardMode(){
         		break;
         	case 2:
         		gotoxy(70, 15);
-        		Loading();
-        		gotoxy(70, 16);
+        		
         		cout << "[+]Enter coins to bet: ";
         		cin >> money;
+        		gotoxy(70, 16);
+				Loading();
         		break;
         	case 3:
-        		return;
+        		level();
         		break; 
     }
         
@@ -880,7 +889,10 @@ void hardMode(){
         gotoxy(76, 16);
     	sleep(5);
 	    system("cls");
-    } else if (num > 6 || num < 1) {
+    } else if (num > 10 || num < 1) {
+    	drawBorder(64, 8, 40, 6);
+    	gotoxy(69, 11);
+    	setColor(12,0);
         cout << "[+]Please enter a valid number!" << endl;
         sleep(5);
 	    system("cls");
@@ -1029,7 +1041,9 @@ string line6 = "\\_|  |_|\\__,_|_|_| |_|_|  |_|\\___|_| |_|\\__,_|";
     cout << line6 << endl;
     setColor(0, BACKGROUND_BLUE);
     drawBorder(65, 8, 36, 7);
-    setColor(11, 0);  
+    setColor(11, 0); 
+    gotoxy(60, 7);
+	cout<<"Source Code: https://github.com/Ouchhi/assignment";
 	gotoxy(68, 10);
 	cout<<"1.Enter Game"<<endl;
 	gotoxy(68, 11);
@@ -1073,7 +1087,7 @@ string line6 = "\\_|  |_|\\__,_|_|_| |_|_|  |_|\\___|_| |_|\\__,_|";
 }
 
 int main() {
-	SetConsoleTitleA("Lok Lak Game");
+	SetConsoleTitleA("Guess Number Game");
 	system("COLOR 3");
 	rules();
     return 0;
